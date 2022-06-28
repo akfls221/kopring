@@ -1,6 +1,6 @@
-package com.example.kopring.data
+package com.example.kopring.controller.data
 
-import com.example.kopring.domain.RiskUser
+import com.example.kopring.service.riskuser.vo.RegisterInfo
 import java.time.LocalDateTime
 
 class RiskUserData {
@@ -16,7 +16,7 @@ class RiskUserData {
         val mobile: String? = null,
         val reason: String? = null,
     ){
-        fun requestToEntity() = RiskUser (
+        fun toRegisterInfo() = RegisterInfo (
             accNo = accNo,
             email = email,
             firstName = firstName,

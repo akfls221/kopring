@@ -15,7 +15,7 @@ class RiskUser (
     @Id
     @GeneratedValue
     @Column(name = "riskuser_id")
-    val id: Int? = null,
+    val id: Long? = null,
 
     val accNo: String? = null,
 

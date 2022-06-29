@@ -6,7 +6,7 @@ import javax.persistence.Id
 import javax.persistence.MappedSuperclass
 
 @MappedSuperclass
-abstract class AbstractEntity (
+open class AbstractEntity (
     @Id
     @GeneratedValue
     val id: Long? = null

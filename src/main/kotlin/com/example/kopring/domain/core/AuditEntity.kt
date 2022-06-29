@@ -11,12 +11,12 @@ import javax.persistence.MappedSuperclass
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener::class)
-class AuditEntity {
+open class AuditEntity (
 
     @CreatedDate
-    var regDate: LocalDateTime? = null
+    var regDate: LocalDateTime? = null,
 
     @LastModifiedDate
     var uptDate: LocalDateTime? = null
 
-}
+)

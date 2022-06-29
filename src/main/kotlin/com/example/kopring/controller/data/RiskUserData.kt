@@ -4,7 +4,9 @@ import com.example.kopring.service.riskuser.vo.RegisterInfo
 import java.time.LocalDateTime
 
 class RiskUserData {
+}
 
+class RiskUserInfo{
     data class RegisterRequest(
         val accNo: String? = null,
         val email: String? = null,
@@ -16,6 +18,9 @@ class RiskUserData {
         val mobile: String? = null,
         val reason: String? = null,
     ){
+        /**
+         * Dto > Vo conver
+         */
         fun toRegisterInfo() = RegisterInfo (
             accNo = accNo,
             email = email,
@@ -30,7 +35,7 @@ class RiskUserData {
     }
 
     data class RegisterResponse(
-        val registId : Int,
+        val registId : Long?,
         val dateTime: LocalDateTime? = null
     )
 }

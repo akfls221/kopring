@@ -26,6 +26,9 @@ dependencies {
     // validation
     implementation("org.springframework.boot:spring-boot-starter-validation")
 
+    //json 추가
+    implementation("org.springframework.boot:spring-boot-starter-json:2.7.1")
+
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 

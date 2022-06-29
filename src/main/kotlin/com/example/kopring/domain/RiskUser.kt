@@ -1,10 +1,21 @@
 package com.example.kopring.domain
 
 import com.example.kopring.domain.core.AbstractEntity
+import com.example.kopring.domain.core.AuditEntity
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing
+import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.EntityListeners
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
 
 @Entity
 class RiskUser (
+
+    @Id
+    @GeneratedValue
+    @Column(name = "riskuser_id")
+    val id: Int? = null,
 
     val accNo: String? = null,
 
@@ -24,6 +35,6 @@ class RiskUser (
 
     val reason: String? = null,
 
-) : AbstractEntity() {
+) : AuditEntity() {
 
 }

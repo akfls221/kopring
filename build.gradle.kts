@@ -29,9 +29,6 @@ dependencies {
     //json 추가
     implementation("org.springframework.boot:spring-boot-starter-json:2.7.1")
 
-    //slf4j 추가
-    implementation("org.slf4j:slf4j-api:2.0.0-alpha7")
-
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 

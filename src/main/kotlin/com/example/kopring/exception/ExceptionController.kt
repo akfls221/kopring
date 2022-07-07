@@ -31,4 +31,17 @@ class ExceptionController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
             .body(ResponseError(HttpStatus.BAD_REQUEST.value(), error.message))
     }
+
+    @ExceptionHandler(TkException::class)
+    fun tkExceptionHandler(request: HttpServletRequest, error: TkException): ResponseEntity<ResponseError> {
+        log.error(
+            "Request Address: {}, URL: {}, message: {}, Bind Exception: {}",
+            request.remoteHost,
+            request.requestURL,
+            error.message,
+            error.stackTrace()
+        )
+        return ResponseEntity.status(error.status)
+            .body(ResponseError(error.code, error.message))
+    }
 }

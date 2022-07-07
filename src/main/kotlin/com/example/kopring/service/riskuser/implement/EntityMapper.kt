@@ -1,5 +1,6 @@
 package com.example.kopring.service.riskuser.implement
 
+import com.example.kopring.controller.data.RiskUserData
 import com.example.kopring.controller.data.RiskUserInfo
 import com.example.kopring.domain.RiskUser
 import com.example.kopring.service.riskuser.vo.RegisterInfo
@@ -24,4 +25,16 @@ class EntityMapper {
         dateTime = riskUser.regDate
     )
 
+
+    fun convertToRiskUserInfoToRiskUserFormData(riskUser: RiskUser) = RiskUserData.FormData(
+        accNo = riskUser.accNo,
+        email = riskUser.email,
+        firstName = riskUser.firstName,
+        lastName = riskUser.lastName,
+        localName = riskUser.localName,
+        bsb = riskUser.bsb,
+        bank = riskUser.bank,
+        mobile = riskUser.mobile,
+        reason = riskUser.reason
+    )
 }

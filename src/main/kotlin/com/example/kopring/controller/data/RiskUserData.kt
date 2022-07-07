@@ -6,6 +6,17 @@ import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
 
 class RiskUserData {
+    data class FormData (
+        val accNo: String?,
+        val email: String? = null,
+        val firstName: String? = null,
+        val lastName: String? = null,
+        val localName: String? = null,
+        val bsb: String? = null,
+        val bank: String? = null,
+        val mobile: String? = null,
+        val reason: String? = null,
+    )
 }
 
 class RiskUserInfo{

@@ -3,6 +3,7 @@ package com.example.kopring.service.riskuser.implement
 import com.example.kopring.controller.data.RiskUserData
 import com.example.kopring.controller.data.RiskUserInfo
 import com.example.kopring.domain.RiskUser
+import com.example.kopring.service.riskuser.vo.ModifyInfo
 import com.example.kopring.service.riskuser.vo.RegisterInfo
 import org.springframework.stereotype.Component
 
@@ -18,6 +19,18 @@ class EntityMapper {
         bank = registerInfo.bank,
         mobile = registerInfo.mobile,
         reason = registerInfo.reason
+    )
+
+    fun convertToEntity(modifyInfo: ModifyInfo) = RiskUser(
+        accNo = modifyInfo.accNo,
+        email = modifyInfo.email,
+        firstName = modifyInfo.firstName,
+        lastName = modifyInfo.lastName,
+        localName = modifyInfo.localName,
+        bsb = modifyInfo.bsb,
+        bank = modifyInfo.bank,
+        mobile = modifyInfo.mobile,
+        reason = modifyInfo.reason
     )
 
     fun convertToRiskUserInfoRegisterResponse(riskUser: RiskUser) =  RiskUserInfo.RegisterResponse(
@@ -36,5 +49,10 @@ class EntityMapper {
         bank = riskUser.bank,
         mobile = riskUser.mobile,
         reason = riskUser.reason
+    )
+
+    fun convertToRiskUserModifyResponse(riskUser: RiskUser) = RiskUserInfo.ModifyResponse(
+        registId = riskUser.id,
+        modifyDate = riskUser.uptDate
     )
 }

@@ -6,6 +6,7 @@ import com.example.kopring.domain.RiskUser
 import com.example.kopring.service.riskuser.vo.ModifyInfo
 import com.example.kopring.service.riskuser.vo.RegisterInfo
 import org.springframework.stereotype.Component
+import java.time.LocalDateTime
 
 @Component
 class EntityMapper {
@@ -54,5 +55,10 @@ class EntityMapper {
     fun convertToRiskUserModifyResponse(riskUser: RiskUser) = RiskUserInfo.ModifyResponse(
         registId = riskUser.id,
         modifyDate = riskUser.uptDate
+    )
+
+    fun convertToRiskUserDeleteResponse(riskUser: RiskUser) = RiskUserInfo.DeleteResponse(
+        deleteId = riskUser.id,
+        deleteDate = LocalDateTime.now()
     )
 }

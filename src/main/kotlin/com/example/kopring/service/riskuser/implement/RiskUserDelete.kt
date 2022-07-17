@@ -22,7 +22,7 @@ class RiskUserDelete(
             Status.NoExistEx.dec
         )}
         riskUserRepository.deleteById(id)
-        return entityMapper.converToRiskUserDeleteResponse(riskUser)
+        return entityMapper.convertToRiskUserDeleteResponse(riskUser)
     }
 
 }

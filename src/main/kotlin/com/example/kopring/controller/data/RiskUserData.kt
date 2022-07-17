@@ -85,4 +85,9 @@ class RiskUserInfo{
         val registId : Long?,
         val modifyDate: LocalDateTime? = null
     )
+
+    data class DeleteResponse(
+        val deleteId : Long?,
+        val deleteDate: LocalDateTime? = null
+    )
 }

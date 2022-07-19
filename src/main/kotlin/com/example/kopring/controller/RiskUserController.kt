@@ -6,12 +6,13 @@ import com.example.kopring.service.riskuser.RiskUserDeleteService
 import com.example.kopring.service.riskuser.RiskUserModifyService
 import com.example.kopring.service.riskuser.RiskUserQueryService
 import com.example.kopring.service.riskuser.implement.RiskUserAddService
+import org.springframework.data.domain.Page
+import org.springframework.data.domain.Pageable
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 import javax.validation.Valid
@@ -53,8 +54,13 @@ class RiskUserController(
      * 블랙리스트 유저 삭제
      */
     @DeleteMapping("/api/{id}")
-    fun deleteRiskUser(@PathVariable id: Long) : RiskUserInfo.DeleteResponse{
+    fun deleteRiskUser(@PathVariable id: Long): RiskUserInfo.DeleteResponse {
         return riskUserDeleteService.deleteRiscUser(id)
+    }
+
+    @PostMapping("/api/List")
+    fun getTotalRiskUser(pageable: Pageable) : Page<RiskUserData.FormData>{
+        return riskUserQueryService.getTotalRiskUser(pageable)
     }
 }
 

@@ -58,8 +58,11 @@ class RiskUserController(
         return riskUserDeleteService.deleteRiscUser(id)
     }
 
+    /**
+     * 블랙리스트 유저 리스트 가져오기(basic)
+     */
     @PostMapping("/api/List")
-    fun getTotalRiskUser(pageable: Pageable) : Page<RiskUserData.FormData>{
+    fun getTotalRiskUser(pageable: Pageable): Page<RiskUserData.FormData> {
         return riskUserQueryService.getTotalRiskUser(pageable)
     }
 }

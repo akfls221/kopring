@@ -6,6 +6,9 @@ import com.example.kopring.service.riskuser.vo.RegisterInfo
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.stereotype.Component
 
+/**
+ * 초기 로드시 100개의 임의 RiskUser을 DB에 넣기 위한 InitializingBean 작업
+ */
 @Component
 class InitAddRiskUser(
     private val riskUserRepository : RiskUserRepository,

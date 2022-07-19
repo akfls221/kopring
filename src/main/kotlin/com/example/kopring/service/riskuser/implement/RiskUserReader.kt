@@ -24,10 +24,10 @@ class RiskUserReader(
 
     fun getTotalRiskUser(pageable: Pageable) : Page<RiskUser>{
         riskUserRepository.findAllBasic(pageable).let {
-            if(it.size <= 0) throw TkException(
+            if(it.content.size <= 0) throw TkException(
                 status = HttpStatus.BAD_REQUEST,
                 code = HttpStatus.BAD_REQUEST.value(),
-                message = "존재하지 않는 블랙리스트 입니다."
+                message = "조회된 리스트가 없습니다."
             ) else return riskUserRepository.findAllBasic(pageable)
         }
     }

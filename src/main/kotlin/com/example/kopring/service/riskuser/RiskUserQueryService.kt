@@ -17,6 +17,9 @@ interface RiskUserQueryService {
      */
     fun getRiskUserById(id: Long) : RiskUserData.FormData
 
+    /**
+     * 블랙리스트 유저 페이징 조회(basic)
+     */
     fun getTotalRiskUser(pageable: Pageable) : Page<RiskUserData.FormData>
 
 }
